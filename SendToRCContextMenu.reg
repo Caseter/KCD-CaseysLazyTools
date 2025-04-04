@@ -1,0 +1,21 @@
+Windows Registry Editor Version 5.00
+
+; Create main RC branch
+[HKEY_CLASSES_ROOT\*\shell\RC]
+"MUIVerb"="RC"
+"SubCommands"=""
+"ExtendedSubCommandsKey"="*\shell\RC\shell"
+
+; --- Standard option
+[HKEY_CLASSES_ROOT\*\shell\RC\shell\01Standard]
+@="Standard"
+
+[HKEY_CLASSES_ROOT\*\shell\RC\shell\01Standard\command]
+@="\"D:\\SteamLibrary\\steamapps\\common\\KCD2Mod\\Tools\\rc\\rc.exe\" \"%1\""
+
+; --- ID Map option with cmd and extra args
+[HKEY_CLASSES_ROOT\*\shell\RC\shell\02IDMap]
+@="ID Map"
+
+[HKEY_CLASSES_ROOT\*\shell\RC\shell\02IDMap\command]
+@="cmd.exe /c \"cd /d D:\\SteamLibrary\\steamapps\\common\\KCD2Mod\\Tools\\rc && rc.exe \"%1\" /preset=IDMask /colorspace=linear\""
